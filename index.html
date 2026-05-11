@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Cadastro</title>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Usuários Cadastrados</h1>
+        <a href="/cadastro" class="btn-link btn-add"> + Novo Cadastro</a>
+        <ul>
+            {% for usuario in lista %}
+                <li><strong>{{ usuario.nome }}</strong><br><small>{{ usuario.email }}</small></li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+<style>
+    body { font-family: sans-serif; background-color: #f4f4f4; padding: 20px; }
+    h1 { color: #333; }
+    form { background: white; padding: 20px; border-radius: 8px; }
+</style>
+
